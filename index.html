@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Sonrisa Profesional</title>
+  <meta name="description" content="Sonrisa Profesional: clínica dental con atención cercana y tecnología moderna. Agenda tu hora en línea en menos de un minuto." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='9' fill='%230d5c63'/><path d='M10 9c2-1.5 4-1 6 0 2-1 4-1.5 6 0 2 1.6 1.6 5-.2 8.4-.8 1.6-1 4.4-1.6 6.6-.4 1.4-2 1.4-2.4 0L16.6 18c-.2-.6-1-.6-1.2 0l-1.2 6c-.4 1.4-2 1.4-2.4 0-.6-2.2-.8-5-1.6-6.6C8.4 14 8 10.6 10 9z' fill='white'/></svg>" />
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a href="#top" class="brand" aria-label="Sonrisa Profesional, inicio">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="9" />
+          <path d="M10 9c2-1.5 4-1 6 0 2-1 4-1.5 6 0 2 1.6 1.6 5-.2 8.4-.8 1.6-1 4.4-1.6 6.6-.4 1.4-2 1.4-2.4 0L16.6 18c-.2-.6-1-.6-1.2 0l-1.2 6c-.4 1.4-2 1.4-2.4 0-.6-2.2-.8-5-1.6-6.6C8.4 14 8 10.6 10 9z" />
+        </svg>
+        <span>Sonrisa <strong>Profesional</strong></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#preguntas">Preguntas</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <a href="#agendar" class="btn btn--primary btn--sm header__cta">Agendar hora</a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>Agenda abierta esta semana</p>
+          <h1>Cuidamos tu <em>sonrisa</em> con calma y precisión.</h1>
+          <p class="lead">Odontología moderna para toda la familia en Providencia. Te explicamos cada paso y te acompañamos hasta el final del tratamiento.</p>
+          <div class="hero__actions">
+            <a href="#agendar" class="btn btn--primary">Agendar mi hora
+              <svg class="icon-sm" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" /></svg>
+            </a>
+            <a href="#servicios" class="btn btn--ghost">Ver servicios</a>
+          </div>
+          <ul class="hero__stats">
+            <li><strong>12</strong><span>años de experiencia</span></li>
+            <li><strong>4,9<small>/5</small></strong><span>valoración en Google</span></li>
+            <li><strong>8.000+</strong><span>pacientes atendidos</span></li>
+          </ul>
+        </div>
+
+        <aside class="hero__visual" aria-label="Disponibilidad">
+          <div class="arch" aria-hidden="true">
+            <svg class="arch__tooth" viewBox="0 0 32 32"><path d="M10 9c2-1.5 4-1 6 0 2-1 4-1.5 6 0 2 1.6 1.6 5-.2 8.4-.8 1.6-1 4.4-1.6 6.6-.4 1.4-2 1.4-2.4 0L16.6 18c-.2-.6-1-.6-1.2 0l-1.2 6c-.4 1.4-2 1.4-2.4 0-.6-2.2-.8-5-1.6-6.6C8.4 14 8 10.6 10 9z" /></svg>
+          </div>
+
+          <div class="slot-card">
+            <p class="slot-card__label">Próxima hora disponible</p>
+            <p class="slot-card__date" id="nextSlotDate">—</p>
+            <p class="slot-card__time" id="nextSlotTime">—</p>
+
+            <div class="week" id="week" aria-label="Horas libres en los próximos días"></div>
+
+            <a href="#agendar" class="btn btn--primary btn--block" id="nextSlotBtn">Reservar esta hora</a>
+          </div>
+
+          <div class="chip chip--float">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3 3 7-7" /></svg>
+            Evaluación inicial sin costo
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Convenios -->
+    <div class="strip">
+      <div class="container strip__inner">
+        <span>Atendemos</span>
+        <ul>
+          <li>Fonasa</li>
+          <li>Isapres</li>
+          <li>Seguros dentales</li>
+          <li>Hasta 12 cuotas sin interés</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Servicios -->
+    <section class="section" id="servicios">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">Servicios</p>
+          <h2>Todo lo que tu sonrisa necesita, en un solo lugar.</h2>
+        </header>
+
+        <div class="services">
+          <article class="service">
+            <span class="service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4c1.6-1 3.3-.8 5 0 1.7-.8 3.4-1 5 0 1.8 1.2 1.6 4.2.1 6.8-.7 1.2-.9 3.6-1.4 5.5-.3 1.1-1.6 1.1-1.9 0L12.6 13c-.2-.6-1-.6-1.2 0l-1.2 3.3c-.3 1.1-1.6 1.1-1.9 0-.5-1.9-.7-4.3-1.4-5.5C5.4 8.2 5.2 5.2 7 4z" /></svg></span>
+            <h3>Odontología general</h3>
+            <p>Evaluaciones, limpiezas, tapaduras y prevención para mantener tu salud oral al día.</p>
+          </article>
+          <article class="service">
+            <span class="service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12h19" /><rect x="4.5" y="9" width="4" height="6" rx="1" /><rect x="10" y="9" width="4" height="6" rx="1" /><rect x="15.5" y="9" width="4" height="6" rx="1" /></svg></span>
+            <h3>Ortodoncia</h3>
+            <p>Brackets metálicos, estéticos y alineadores invisibles para adolescentes y adultos.</p>
+          </article>
+          <article class="service">
+            <span class="service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3l1.7 4.8L17.5 9.5l-4.8 1.7L11 16l-1.7-4.8L4.5 9.5l4.8-1.7z" /><path d="M18 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z" /></svg></span>
+            <h3>Estética dental</h3>
+            <p>Blanqueamiento, carillas y diseño de sonrisa con resultados naturales.</p>
+          </article>
+          <article class="service">
+            <span class="service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8l-1 4H9z" /><path d="M9.5 7v12.5l2.5 2 2.5-2V7" /><path d="M9.5 10.5l5-1.5M9.5 14l5-1.5M9.5 17.5l5-1.5" /></svg></span>
+            <h3>Implantes</h3>
+            <p>Recupera piezas perdidas con implantes de titanio y planificación digital.</p>
+          </article>
+          <article class="service">
+            <span class="service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4c1.6-1 3.3-.8 5 0 1.7-.8 3.4-1 5 0 1.8 1.2 1.6 4.2.1 6.8-.7 1.2-.9 3.6-1.4 5.5-.3 1.1-1.6 1.1-1.9 0L12.6 13c-.2-.6-1-.6-1.2 0l-1.2 3.3c-.3 1.1-1.6 1.1-1.9 0-.5-1.9-.7-4.3-1.4-5.5C5.4 8.2 5.2 5.2 7 4z" /><path d="M10.5 7.5v3M13.5 7.5v3" /></svg></span>
+            <h3>Endodoncia</h3>
+            <p>Tratamientos de conducto precisos y con anestesia para salvar tus dientes.</p>
+          </article>
+          <article class="service">
+            <span class="service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M8.5 14a4 4 0 007 0" /><path d="M9 9.5h.01M15 9.5h.01" /></svg></span>
+            <h3>Odontopediatría</h3>
+            <p>Atención amable y paciente para que los más pequeños se sientan seguros.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nosotros -->
+    <section class="section section--tint" id="nosotros">
+      <div class="container about">
+        <div class="about__intro">
+          <p class="eyebrow">Por qué elegirnos</p>
+          <h2>Una visita al dentista que se siente <em>distinta</em>.</h2>
+          <p class="lead">Ir al dentista no tiene por qué ser incómodo. Diseñamos cada visita para que sea clara, puntual y tranquila.</p>
+          <blockquote class="about__quote">
+            “Nuestro trabajo empieza escuchando. Recién después tomamos el espejo.”
+            <cite>Dra. Isidora Fuentes · Directora clínica</cite>
+          </blockquote>
+        </div>
+        <ul class="features">
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>
+            <h3>Puntualidad real</h3>
+            <p>Respetamos tu tiempo. Tu hora es tu hora.</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z" /><path d="M9 8h6M9 12h6" /></svg>
+            <h3>Presupuestos claros</h3>
+            <p>Sabes cuánto pagarás antes de comenzar, sin sorpresas.</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8V5a1 1 0 011-1h3M16 4h3a1 1 0 011 1v3M20 16v3a1 1 0 01-1 1h-3M8 20H5a1 1 0 01-1-1v-3" /><path d="M7 12h10" /></svg>
+            <h3>Diagnóstico digital</h3>
+            <p>Radiografía digital y escáner intraoral, sin moldes incómodos.</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2" /><path d="M3 10h18M7 15h3" /></svg>
+            <h3>Pago flexible</h3>
+            <p>Fonasa, isapres y hasta 12 cuotas sin interés.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Agendar -->
+    <section class="section" id="agendar">
+      <div class="container booking">
+        <div class="booking__intro">
+          <p class="eyebrow">Agenda en línea</p>
+          <h2>Reserva tu hora en menos de un minuto.</h2>
+          <ol class="steps">
+            <li><span>1</span><div><strong>Elige la atención</strong><small>Si no sabes cuál, elige evaluación inicial.</small></div></li>
+            <li><span>2</span><div><strong>Selecciona día y hora</strong><small>Bloques de 30 minutos, lunes a sábado.</small></div></li>
+            <li><span>3</span><div><strong>Confirma por WhatsApp</strong><small>Te respondemos en horario de atención.</small></div></li>
+          </ol>
+          <div class="contact-card">
+            <p class="muted">¿Prefieres hablar con alguien?</p>
+            <p class="contact-card__phone">+56 2 2222 2222</p>
+          </div>
+        </div>
+
+        <form class="booking__form" id="bookingForm" novalidate>
+          <fieldset>
+            <legend>Tipo de atención</legend>
+            <label class="field">
+              <span>Servicio</span>
+              <select name="servicio" id="servicio" required>
+                <option value="" disabled selected>Selecciona una opción</option>
+                <option>Evaluación inicial</option>
+                <option>Limpieza dental</option>
+                <option>Ortodoncia</option>
+                <option>Estética dental</option>
+                <option>Implantes</option>
+                <option>Endodoncia</option>
+                <option>Odontopediatría</option>
+                <option>Urgencia dental</option>
+              </select>
+              <small class="field__error">Selecciona un servicio.</small>
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Día y horario</legend>
+            <label class="field">
+              <span>Fecha</span>
+              <input type="date" name="fecha" id="fecha" required />
+              <small class="field__error" id="fechaError">Selecciona una fecha válida.</small>
+            </label>
+            <div class="field">
+              <span>Horario</span>
+              <div class="slots" id="slots" role="radiogroup" aria-label="Horarios disponibles">
+                <p class="slots__empty">Primero elige una fecha.</p>
+              </div>
+              <input type="hidden" name="hora" id="hora" />
+              <small class="field__error">Selecciona un horario.</small>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Tus datos</legend>
+            <label class="field">
+              <span>Nombre completo</span>
+              <input type="text" name="nombre" id="nombre" autocomplete="name" placeholder="Ej: Camila Rojas" required />
+              <small class="field__error">Ingresa tu nombre.</small>
+            </label>
+            <div class="field-row">
+              <label class="field">
+                <span>Teléfono</span>
+                <input type="tel" name="telefono" id="telefono" autocomplete="tel" placeholder="+56 9 1234 5678" required pattern="^[+\d\s()-]{8,}$" />
+                <small class="field__error">Ingresa un teléfono válido.</small>
+              </label>
+              <label class="field">
+                <span>Correo</span>
+                <input type="email" name="correo" id="correo" autocomplete="email" placeholder="tu@correo.cl" required />
+                <small class="field__error">Ingresa un correo válido.</small>
+              </label>
+            </div>
+            <label class="field">
+              <span>Comentario <em>(opcional)</em></span>
+              <textarea name="comentario" id="comentario" rows="3" placeholder="Cuéntanos brevemente el motivo de tu consulta"></textarea>
+            </label>
+          </fieldset>
+
+          <button type="submit" class="btn btn--primary btn--block">Reservar hora</button>
+          <p class="form-note">Te pediremos confirmar por WhatsApp en el siguiente paso.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="section section--tint">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">Testimonios</p>
+          <h2>Lo que dicen nuestros pacientes.</h2>
+        </header>
+        <div class="testimonials">
+          <figure>
+            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <blockquote>“Por primera vez fui al dentista sin nervios. Me explicaron todo y el resultado fue increíble.”</blockquote>
+            <figcaption><span class="avatar">VM</span><span><strong>Valentina M.</strong>Estética dental</span></figcaption>
+          </figure>
+          <figure>
+            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <blockquote>“Agendé en línea un domingo y el lunes ya estaba atendido. Muy puntuales.”</blockquote>
+            <figcaption><span class="avatar">JP</span><span><strong>Joaquín P.</strong>Urgencia</span></figcaption>
+          </figure>
+          <figure>
+            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <blockquote>“Mis hijos ahora quieren ir al dentista. Eso lo dice todo.”</blockquote>
+            <figcaption><span class="avatar">FL</span><span><strong>Francisca L.</strong>Odontopediatría</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Preguntas -->
+    <section class="section" id="preguntas">
+      <div class="container faq">
+        <header class="section__head">
+          <p class="eyebrow">Preguntas frecuentes</p>
+          <h2>Resolvemos tus dudas.</h2>
+        </header>
+        <div class="faq__list">
+          <details>
+            <summary>¿La evaluación inicial tiene costo?</summary>
+            <p>No. La primera evaluación es gratuita e incluye diagnóstico y presupuesto detallado.</p>
+          </details>
+          <details>
+            <summary>¿Puedo cambiar o cancelar mi hora?</summary>
+            <p>Sí. Avísanos con al menos 24 horas de anticipación por teléfono o WhatsApp y la reagendamos.</p>
+          </details>
+          <details>
+            <summary>¿Atienden urgencias?</summary>
+            <p>Sí. Reservamos bloques diarios para urgencias. Si tienes dolor, llámanos directamente.</p>
+          </details>
+          <details>
+            <summary>¿Qué medios de pago aceptan?</summary>
+            <p>Efectivo, débito, crédito (hasta 12 cuotas sin interés), transferencia, Fonasa e isapres en convenio.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section class="cta">
+      <div class="container">
+        <div class="cta__inner">
+          <h2>Tu próxima sonrisa empieza con <em>una hora</em>.</h2>
+          <a href="#agendar" class="btn btn--light">Agendar ahora</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie -->
+  <footer class="footer" id="contacto">
+    <div class="container footer__grid">
+      <div>
+        <a href="#top" class="brand brand--footer">
+          <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+            <rect width="32" height="32" rx="9" />
+            <path d="M10 9c2-1.5 4-1 6 0 2-1 4-1.5 6 0 2 1.6 1.6 5-.2 8.4-.8 1.6-1 4.4-1.6 6.6-.4 1.4-2 1.4-2.4 0L16.6 18c-.2-.6-1-.6-1.2 0l-1.2 6c-.4 1.4-2 1.4-2.4 0-.6-2.2-.8-5-1.6-6.6C8.4 14 8 10.6 10 9z" />
+          </svg>
+          <span>Sonrisa <strong>Profesional</strong></span>
+        </a>
+        <p class="muted">Clínica dental integral en Providencia.</p>
+      </div>
+      <div>
+        <h4>Dirección</h4>
+        <p>Av. Providencia 1234, of. 502<br />Providencia, Santiago</p>
+      </div>
+      <div>
+        <h4>Horario</h4>
+        <p>Lun a Vie · 09:00 – 19:00<br />Sábado · 09:00 – 13:00</p>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p>+56 2 2222 2222<br />contacto@sonrisaprofesional.cl</p>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span id="year"></span> Sonrisa Profesional. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Confirmación -->
+  <dialog class="modal" id="confirmModal" aria-labelledby="modalTitle">
+    <div class="modal__icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
+    </div>
+    <h3 id="modalTitle">Tu hora está casi lista</h3>
+    <p class="muted">Revisa el resumen y envíalo por WhatsApp para confirmarla.</p>
+    <dl class="summary" id="summary"></dl>
+    <div class="modal__actions">
+      <a class="btn btn--primary btn--block" id="whatsappLink" target="_blank" rel="noopener">Confirmar por WhatsApp</a>
+      <button class="btn btn--ghost btn--block" id="closeModal" type="button">Volver</button>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
